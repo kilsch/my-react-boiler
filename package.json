@@ -1,0 +1,60 @@
+{
+    "name": "TestReact",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "build": "./node_modules/.bin/webpack",
+        "start": "./node_modules/.bin/webpack-dev-server --progress",
+        "test": "NODE_ENV=test ./node_modules/.bin/mocha --require ./tests/testSetup.js --require babel-register tests/*.js --reporter spec||exit 0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-hot-loader": "^3.0.0-beta.7"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-register": "^6.26.0",
+        "chai": "^4.1.2",
+        "enzyme": "^3.1.0",
+        "enzyme-adapter-react-16": "^1.0.1",
+        "mocha": "^4.0.0",
+        "react-test-renderer": "^16.0.0",
+        "webpack": "^3.6.0",
+        "webpack-dev-server": "^2.9.1"
+    },
+    "babel": {
+        "presets": [
+            [
+                "env",
+                {
+                    "modules": false
+                }
+            ],
+            "react"
+        ],
+        "plugins": [
+            [
+                "react-hot-loader/babel"
+            ]
+        ],
+        "env": {
+            "test": {
+                "presets": [
+                    "env"
+                ]
+            }
+        }
+    }
+}
